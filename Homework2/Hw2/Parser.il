@@ -41,8 +41,7 @@
         IL_0001: newobj instance void [System.Runtime]System.ArgumentException::.ctor()
         throw
         
-        IL_0002: ldstr "xyi"
-        newobj instance void [System.Runtime]System.InvalidOperationException::.ctor(string)
+        IL_0002: newobj instance void [System.Runtime]System.InvalidOperationException::.ctor()
         throw
     }
     
