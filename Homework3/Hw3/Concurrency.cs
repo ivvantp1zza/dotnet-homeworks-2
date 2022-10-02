@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Hw3.Tests;
 
+[ExcludeFromCodeCoverage]
 public static class Concurrency
 {
     private static int _index;

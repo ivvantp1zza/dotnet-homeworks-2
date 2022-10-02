@@ -20,7 +20,7 @@ public class SingleInitializationSingleton
         Thread.Sleep(delay);
     }
 
-    internal static void Reset()
+    public static void Reset()
     {
         _isInitialized = false;
         lock (Locker)
