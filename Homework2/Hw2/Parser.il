@@ -1,4 +1,4 @@
-﻿.class public abstract sealed auto ansi beforefieldinit
+.class public abstract sealed auto ansi beforefieldinit
   Hw2.Parser
 {
     .method public static void ParseCalcArguments(string[] args, 
