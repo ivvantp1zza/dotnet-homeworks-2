@@ -1,4 +1,4 @@
-﻿.class public abstract sealed auto ansi beforefieldinit
+.class public abstract sealed auto ansi beforefieldinit
   Hw2.Parser
 {
     .method public static void ParseCalcArguments(string[] args, 
@@ -40,6 +40,7 @@
         
         IL_0001: newobj instance void [System.Runtime]System.ArgumentException::.ctor()
         throw
+        
         
         IL_0002: newobj instance void [System.Runtime]System.InvalidOperationException::.ctor()
         throw
