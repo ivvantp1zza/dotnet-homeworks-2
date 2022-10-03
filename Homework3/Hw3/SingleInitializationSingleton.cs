@@ -6,6 +6,11 @@ namespace Hw3.Tests;
 public class SingleInitializationSingleton
 {
     private static readonly object Locker = new();
+    
+    private static Lazy<SingleInitializationSingleton> _instance =
+        new(() => new SingleInitializationSingleton());
+    
+    public static SingleInitializationSingleton Instance => _instance.Value;
 
     private static volatile bool _isInitialized = false;
     
@@ -41,8 +46,4 @@ public class SingleInitializationSingleton
             _isInitialized = true;
         }
     }
-    
-    private static Lazy<SingleInitializationSingleton> _instance =
-        new(() => new SingleInitializationSingleton());
-    public static SingleInitializationSingleton Instance => _instance.Value;
 }
