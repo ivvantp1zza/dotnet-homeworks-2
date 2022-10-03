@@ -29,7 +29,6 @@ public class SingleInitializationSingleton
             _instance = new(() => new SingleInitializationSingleton());
             _isInitialized = false;
         }
-        
     }
 
     public static void Initialize(int delay)
@@ -46,5 +45,4 @@ public class SingleInitializationSingleton
     private static Lazy<SingleInitializationSingleton> _instance =
         new(() => new SingleInitializationSingleton());
     public static SingleInitializationSingleton Instance => _instance.Value;
-
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace Hw3.Tests;
@@ -45,5 +46,20 @@ public class SingleInitializationSingletonTests
         {
             SingleInitializationSingleton.Initialize(3);
         });
+    }
+
+    [Fact]
+    public void DoubleInitializationAttemptThrowsExceptionOnSecondIf()
+    {
+        var tasks = new Task[1000];
+        for (var i = 0; i < 1000; i++)
+        {
+            tasks[i] = Task.Factory.StartNew(() =>
+            {
+                SingleInitializationSingleton.Reset();
+                SingleInitializationSingleton.Initialize(5);
+            });
+        }
+        Assert.Throws<AggregateException>(() => Task.WaitAll(tasks));
     }
 }
