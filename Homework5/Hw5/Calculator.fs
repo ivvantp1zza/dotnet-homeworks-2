@@ -21,6 +21,7 @@ let multiply = "*"
 [<Literal>] 
 let divide = "/"
 
+[<System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage>]
 let messageText error =
     match error with
     | Message.SuccessfulExecution -> "Executed successfully"
