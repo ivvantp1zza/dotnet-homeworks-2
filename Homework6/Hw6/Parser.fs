@@ -1,6 +1,7 @@
 ﻿module Hw6.Parser
 
 open System
+open System.Globalization
 open Microsoft.AspNetCore.Http
 open Microsoft.FSharp.Core
 
@@ -39,10 +40,10 @@ let isParametersCorrect (request: HttpRequest): Result<('a * 'b * 'c), (Message 
             | true, op -> Ok (v1.ToString(), op.ToString(), v2.ToString())
             
 let parseArgs (arg1: string, operation: string, arg2: string): Result<('a * CalculatorOperation * 'b), (Message * string)> =
-    match Decimal.TryParse(arg1.Replace(".", ",")) with
+    match Double.TryParse(arg1, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture) with
     | false, v1 -> Error (Message.WrongArgFormat, $"Could not parse value '{arg1}'")
     | true, v1 ->
-        match Decimal.TryParse(arg2.Replace(".", ",")) with
+        match Double.TryParse(arg2, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture) with
         | false, v2 -> Error (Message.WrongArgFormat, $"Could not parse value '{arg2}'")
         | true, v2 -> isOperationSupported (v1, operation, v2)
     
@@ -51,7 +52,7 @@ let inline isDividingByZero (arg1, operation, arg2): Result<('a * CalculatorOper
     match operation with
     | CalculatorOperation.Divide ->
         match arg2 with
-        | 0m -> Error (Message.DivideByZero, "DivideByZero")
+        | 0.0 -> Error (Message.DivideByZero, "DivideByZero")
         | _ -> Ok (arg1, operation, arg2)
     | _ -> Ok (arg1, operation, arg2)
     
