@@ -48,7 +48,7 @@ public class SingleInitializationSingletonTests
         });
     }
 
-    [Fact (Skip = "Undetermined behaviour")]
+    [Fact]
     public void DoubleInitializationAttemptThrowsExceptionOnSecondIf()
     {
         var tasks = new Task[1000];
