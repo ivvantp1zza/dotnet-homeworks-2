@@ -25,7 +25,8 @@ let messageText error =
     | Message.WrongArgFormat -> "One or both arguments is incorrect"
     | Message.WrongArgFormatOperation -> "Operation is not supported"
     | Message.DivideByZero -> "Cannot divide by zero"
-    
+ 
+[<System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage>]   
 let statusCode (message: Message) =
     match message with
     | Message.SuccessfulExecution -> HttpStatusCode.OK

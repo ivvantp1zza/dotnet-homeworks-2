@@ -1,6 +1,7 @@
 ﻿module Hw6.Parser
 
 open System
+open System.Diagnostics.CodeAnalysis
 open System.Globalization
 open Microsoft.AspNetCore.Http
 open Microsoft.FSharp.Core
@@ -10,7 +11,8 @@ type CalculatorOperation =
      | Minus = 1
      | Multiply = 2
      | Divide = 3
-     
+
+[<System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage>]     
 let isArgLengthSupported (request : HttpRequest): Result<'a,'b> =
     let query = request.Query
     match request.Query.Count with
@@ -26,6 +28,7 @@ let inline isOperationSupported (arg1, operation, arg2): Result<('a * Calculator
     | "Divide" -> Ok (arg1, CalculatorOperation.Divide, arg2)
     | _ -> Error (Message.WrongArgFormatOperation, $"Could not parse value '{operation}'")
 
+[<System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage>]
 let isParametersCorrect (request: HttpRequest): Result<('a * 'b * 'c), (Message * string)> =
     let query = request.Query
     let parsedArg1 = query.TryGetValue("value1")
