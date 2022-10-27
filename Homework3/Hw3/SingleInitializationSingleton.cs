@@ -27,7 +27,6 @@ public class SingleInitializationSingleton
 
     public static void Reset()
     {
-        if(!_isInitialized) return;
         lock (Locker)
         {
             if (!_isInitialized) return;
