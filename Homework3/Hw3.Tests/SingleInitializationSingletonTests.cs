@@ -51,8 +51,8 @@ public class SingleInitializationSingletonTests
     [Fact]
     public void DoubleInitializationAttemptThrowsExceptionOnSecondIf()
     {
-        var tasks = new Task[1000];
-        for (var i = 0; i < 1000; i++)
+        var tasks = new Task[5000];
+        for (var i = 0; i < 5000; i++)
         {
             tasks[i] = Task.Factory.StartNew(() =>
             {
