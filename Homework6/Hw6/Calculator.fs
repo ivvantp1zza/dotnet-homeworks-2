@@ -1,4 +1,4 @@
-﻿module Hw6.Calculator
+module Hw6.Calculator
 
 open System
 open System.Net
@@ -32,11 +32,13 @@ let statusCode (message: Message) =
     | Message.SuccessfulExecution -> HttpStatusCode.OK
     | Message.DivideByZero -> HttpStatusCode.OK
     | _ -> HttpStatusCode.BadRequest
+ 
+[<System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage>]   
+let ToString (obj): string =
+        obj.ToString()
 
 [<System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage>]
 let inline calculate (request: HttpRequest): 'a =
-    let ToString (obj): string =
-        obj.ToString()
     let parsed = parseCalcArguments request
     match parsed with
     | Error (m, str) ->
@@ -50,6 +52,3 @@ let inline calculate (request: HttpRequest): 'a =
         | CalculatorOperation.Minus -> Ok (ToString (value1 - value2))
         | CalculatorOperation.Multiply -> Ok (ToString (value1 * value2))
         | CalculatorOperation.Divide -> Ok (ToString (value1 / value2))
-        
-        
-    
