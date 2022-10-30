@@ -27,7 +27,6 @@ public class SingleInitializationSingleton
 
     public static void Reset()
     {
-        if(!_isInitialized) return;
         lock (Locker)
         {
             if (!_isInitialized) return;
@@ -38,7 +37,6 @@ public class SingleInitializationSingleton
 
     public static void Initialize(int delay)
     {
-        if (_isInitialized) throw new InvalidOperationException();
         lock (Locker)
         {
             if (_isInitialized) throw new InvalidOperationException();
