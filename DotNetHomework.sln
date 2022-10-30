@@ -53,6 +53,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hw6Tests", "Homework6\Hw6.T
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Hw6Client", "Hw6Client\Hw6Client.fsproj", "{6A6A45B2-DAFE-4F07-A611-795A11817651}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hw7", "Homework7\Hw7\Hw7.csproj", "{72792ADC-14C5-4D47-8BA8-69E67294606A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hw7.Tests", "Homework7\Hw7.Tests\Hw7.Tests.csproj", "{EFFCAE7C-FC6C-4CAD-9A8B-914D7D52F2ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Homework7", "Homework7", "{6FDC39E7-9E3C-4350-9902-9140B9187ED9}"
+	ProjectSection(SolutionItems) = preProject
+		Homework7\README.md = Homework7\README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -85,6 +94,10 @@ Global
 		{6A6A45B2-DAFE-4F07-A611-795A11817651}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A6A45B2-DAFE-4F07-A611-795A11817651}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A6A45B2-DAFE-4F07-A611-795A11817651}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72792ADC-14C5-4D47-8BA8-69E67294606A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72792ADC-14C5-4D47-8BA8-69E67294606A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFFCAE7C-FC6C-4CAD-9A8B-914D7D52F2ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFFCAE7C-FC6C-4CAD-9A8B-914D7D52F2ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{8474FA7C-94A1-43A8-8B85-720B4BB6D796} = {78F13A34-FDFB-4991-AE29-7EB1298599BD}
