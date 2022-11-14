@@ -65,9 +65,10 @@ public class TokenParser
                     position++;
                 }
             }
-            if(!IsBracket(str[position]))
-                throw new Exception(MathErrorMessager.NotNumberMessage(str));
         }
+        if(position < str.Length && !IsBracket(str[position]))
+                throw new Exception(MathErrorMessager.NotNumberMessage(str));
+        
         return new Token(TokenType.Number, str.Substring(startIndex, position - startIndex));
     }
 
