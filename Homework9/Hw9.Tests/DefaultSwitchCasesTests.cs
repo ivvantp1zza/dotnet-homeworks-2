@@ -19,7 +19,7 @@ public class DefaultSwitchCasesTests
     }
 
     [Fact]
-    public void GetOperatorPrecedenceOutOfRange()
+    public void GetRankDefaultSwitchCase()
     {
         var t = new Token(TokenType.Number, "5");
         Assert.Throws<ArgumentOutOfRangeException>(() => t.GetRank());
