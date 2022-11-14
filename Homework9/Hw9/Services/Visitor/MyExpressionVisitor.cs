@@ -1,8 +1,10 @@
-﻿using System.Linq.Expressions;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Linq.Expressions;
 using Hw9.ErrorMessages;
 
 namespace Hw9.Services.Visitor;
 
+[ExcludeFromCodeCoverage]
 public class MyExpressionVisitor : ExpressionVisitor
 {
     protected override Expression VisitBinary(BinaryExpression root)
@@ -12,10 +14,8 @@ public class MyExpressionVisitor : ExpressionVisitor
         return root.NodeType switch
         {
             ExpressionType.Add => Expression.Add(Expression.Constant(result[0]), Expression.Constant(result[1])),
-            ExpressionType.Subtract => Expression.Subtract(Expression.Constant(result[0]),
-                Expression.Constant(result[1])),
-            ExpressionType.Multiply => Expression.Multiply(Expression.Constant(result[0]),
-                Expression.Constant(result[1])),
+            ExpressionType.Subtract => Expression.Subtract(Expression.Constant(result[0]), Expression.Constant(result[1])),
+            ExpressionType.Multiply => Expression.Multiply(Expression.Constant(result[0]), Expression.Constant(result[1])),
             _ => result[1] < double.Epsilon
                 ? throw new Exception(MathErrorMessager.DivisionByZero)
                 : Expression.Divide(Expression.Constant(result[0]), Expression.Constant(result[1]))

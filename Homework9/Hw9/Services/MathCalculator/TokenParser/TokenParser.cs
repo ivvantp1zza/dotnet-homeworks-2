@@ -1,4 +1,5 @@
-﻿using Hw9.ErrorMessages;
+﻿using System.Diagnostics.CodeAnalysis;
+using Hw9.ErrorMessages;
 
 namespace Hw9.Services.MathCalculator.TokenParser;
 
@@ -31,7 +32,7 @@ public class TokenParser
                 {
                     res.Add(GetNumberToken(str, ref index));
                 }
-                else if (!IsOperator(str[index]) && !IsBracket(str[index]))
+                else if (!IsBracketOrOperator(str[index]))
                 {
                     throw new Exception(MathErrorMessager.UnknownCharacterMessage(str[index]));
                 }
@@ -107,5 +108,11 @@ public class TokenParser
     private static bool IsBracket(char c)
     {
         return c == '(' || c == ')';
+    }
+    
+    [ExcludeFromCodeCoverage]
+    private static bool IsBracketOrOperator(char c)
+    {
+        return IsOperator(c) || IsBracket(c);
     }
 }
