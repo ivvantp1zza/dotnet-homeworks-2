@@ -70,7 +70,7 @@ public class TokenParser
         return new Token(TokenType.Number, str.Substring(startIndex, position - startIndex));
     }
 
-    private static Token GetOperatorToken(string str, int position)
+    public static Token GetOperatorToken(string str, int position)
     {
         return str[position] switch
         {
@@ -82,7 +82,7 @@ public class TokenParser
         };
     }
     
-    private static Token GetBracketToken(string str, int position)
+    public static Token GetBracketToken(string str, int position)
     {
         return str[position] switch
         {
