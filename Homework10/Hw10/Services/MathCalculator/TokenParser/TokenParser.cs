@@ -61,7 +61,7 @@ public class TokenParser
             if (str[position] == '.')
             {
                 position++;
-                while (position < str.Length)
+                while (char.IsDigit(str[position]))
                 {
                     position++;
                 }
