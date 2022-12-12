@@ -1,5 +1,8 @@
-﻿namespace Hw10.Services.MathCalculator.TokenParser;
+﻿using System.Diagnostics.CodeAnalysis;
 
+namespace Hw10.Services.MathCalculator.TokenParser;
+
+[ExcludeFromCodeCoverage]
 public class Token
 {
     public TokenType Type { get; }

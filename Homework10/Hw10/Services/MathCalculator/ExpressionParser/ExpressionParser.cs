@@ -1,10 +1,12 @@
-﻿using System.Globalization;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
 using System.Linq.Expressions;
 using Hw10.ErrorMessages;
 using Hw10.Services.MathCalculator.TokenParser;
 
 namespace Hw10.Services.MathCalculator.ExpressionParser;
 
+[ExcludeFromCodeCoverage]
 public class ExpressionParser
 {
     public static Expression Parse(string? input)

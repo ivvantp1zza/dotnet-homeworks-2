@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Hw10.Controllers;
 
+[ExcludeFromCodeCoverage]
 public class CalculatorController : Controller
 {
     private readonly IMathCalculatorService _mathCalculatorService;

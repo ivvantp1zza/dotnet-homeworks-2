@@ -1,5 +1,8 @@
+using System.Diagnostics.CodeAnalysis;
+
 namespace Hw10.ErrorMessages;
 
+[ExcludeFromCodeCoverage]
 public static class MathErrorMessager
 {
     public const string DivisionByZero = "Division by zero";
