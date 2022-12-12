@@ -5,19 +5,19 @@ using Hw11.ErrorMessages;
 namespace Hw11.Services.Visitor;
 
 [ExcludeFromCodeCoverage]
-public class MyExpressionVisitor 
+public static class MyExpressionVisitor 
 {
     [ExcludeFromCodeCoverage]
     public static async Task<double> VisitExpression(Expression expr)
     {
-        return await VisitNode(expr as dynamic);
+        return await Visit((dynamic)expr);
     }
-    
-    private static async Task<double> VisitNode(BinaryExpression binExpr)
+
+    private static async Task<double> Visit(BinaryExpression binExpr)
     {
         await Task.Delay(1000);
-        var t = VisitExpression(binExpr.Left);
-        var t1 = VisitExpression(binExpr.Right);
+        var t = VisitExpression((dynamic)binExpr.Left);
+        var t1 = VisitExpression((dynamic)binExpr.Right);
         var result = await Task.WhenAll(t, t1);
         return binExpr.NodeType switch
         {
@@ -30,8 +30,14 @@ public class MyExpressionVisitor
         };
     }
     
-    private static async Task<double> VisitNode(ConstantExpression node)
+    private static async Task<double> Visit(ConstantExpression node)
     {
         return await Task.FromResult((double) node.Value!);
+    }
+
+    private static async Task<double> Visit(UnaryExpression node)
+    {
+        var val = await VisitExpression(node.Operand);
+        return await Task.FromResult(-val);
     }
 }

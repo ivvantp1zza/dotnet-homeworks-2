@@ -23,6 +23,7 @@ public class IntegrationCalculatorControllerTests : IClassFixture<WebApplication
 	[InlineData("(10 - 3) * 2", "14")]
 	[InlineData("3 - 4 / 2", "1")]
 	[InlineData("8 * (2 + 2) - 3 * 4", "20")]
+	[InlineData("10 - 3 * (-4)", "22")]
 	[InlineData("7 / 7", "1")]
 	public async Task Calculate_CalculateExpression_Success(string expression, string result)
 	{

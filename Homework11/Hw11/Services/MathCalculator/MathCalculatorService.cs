@@ -6,9 +6,9 @@ namespace Hw11.Services.MathCalculator;
 
 public class MathCalculatorService : IMathCalculatorService
 {
-    public Task<double> CalculateMathExpressionAsync(string? expression)
+    public async Task<double> CalculateMathExpressionAsync(string? expression)
     {
         var expr = ExpressionParser.ExpressionParser.Parse(expression);
-        return MyExpressionVisitor.VisitExpression(expr as dynamic);
+        return await MyExpressionVisitor.VisitExpression((dynamic)expr);
     }
 }
