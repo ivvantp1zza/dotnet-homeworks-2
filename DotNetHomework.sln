@@ -87,8 +87,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Homework11", "Homework11", 
 		Homework11\README.md = Homework11\README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hw11Tests", "Homework11\Hw11.Tests\Hw11Tests.csproj", "{B4F60DFD-034F-4205-BC6B-692F276B414B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hw11", "Homework11\Hw11\Hw11.csproj", "{D3503703-6227-4A49-A937-F20DB5BAD636}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Homework12", "Homework12", "{F76958C8-AD2F-4006-80AF-D7A466020AD3}"
