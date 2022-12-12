@@ -3,7 +3,7 @@ using Hw10.ErrorMessages;
 using Hw10.Services.MathCalculator.TokenParser;
 
 namespace Hw10.Services.MathCalculator.TokenParser;
-
+[ExcludeFromCodeCoverage]
 public class TokenParser
 {
     public static List<Token> Parse(string input)

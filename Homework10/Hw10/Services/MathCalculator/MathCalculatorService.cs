@@ -1,9 +1,11 @@
-﻿using System.Linq.Expressions;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Linq.Expressions;
 using Hw10.Dto;
 using Hw10.Services.Visitor;
 
 namespace Hw10.Services.MathCalculator;
 
+[ExcludeFromCodeCoverage]
 public class MathCalculatorService : IMathCalculatorService
 {
     public async Task<CalculationMathExpressionResultDto> CalculateMathExpressionAsync(string? expression)

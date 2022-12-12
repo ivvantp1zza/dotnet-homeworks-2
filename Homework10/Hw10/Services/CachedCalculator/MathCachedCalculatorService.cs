@@ -1,10 +1,12 @@
-﻿using Hw10.DbModels;
+﻿using System.Diagnostics.CodeAnalysis;
+using Hw10.DbModels;
 using Hw10.Dto;
 using Hw10.Services.MathCalculator;
 using Microsoft.Extensions.Caching.Memory;
 
 namespace Hw10.Services.CachedCalculator;
 
+[ExcludeFromCodeCoverage]
 public class MathCachedCalculatorService : IMathCalculatorService
 {
 	private readonly IMemoryCache _cache;
